@@ -8,27 +8,27 @@ const drawWordle = async (results) => {
       return {
         text: raceResult.Driver.familyName,
         size: 10 + Math.abs(raceResult.position - race.Results.length) * 2,
-        name: raceResult.Driver.familyName,
-        position: raceResult.Position,
-        nationality: raceResult.Driver.nationality
-        //come from same race result object
+          name: raceResult.Driver.familyName,
+          position: raceResult.Position,
+          nationality: raceResult.Driver.nationality
       };
   });
 
-  var layout = d3.layout.cloud()
+  var layout = d3.layout.cloud();
 
   // TODO: Fix dimensions
-  layout.size([960, 500])
+  layout.size([1250, 750])
     .words(words)
     .font("Impact")
     .fontSize(function(d, i) { return d.size; })
     .on("end", draw)
     .start();
-}
+};
 
 // TODO: Use a color pallete that contains meaningful colors
 function getRandColor() {
-  let color = '#9CDCFE';
+    let color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    //let color = '#9CDCFE';
   return color;
 }
 
@@ -49,5 +49,11 @@ function draw(words) {
     .attr("transform", function(d) {
         return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
     })
-    .text(function(d) { console.log(d); return d.text; });
+    .text(function(d) { return d.text; })
+      .call(d3.helper.tooltip(
+          function(d){
+              console.log(d);
+              return "<b>"+ d.name + "</b><br/>"+ d.nationality;
+
+          }
 }
