@@ -15,7 +15,7 @@ http://ec2-18-191-95-221.us-east-2.compute.amazonaws.com:3005
 
 ## Data Processing
 <!--The application uses # of datasets. From XYZ. -->
-On initial page load, a wordle with the last names of the top drivers from a circuit from 2009 will be loaded on the right hand side. The circuit may change from time to time on refresh depending on what the API returns first in the array of all the circuits. On the left hand side, a map with points of locations with every circuit will be displayed and the currently selected circuit indicated with a different colored point.
+On initial page load, a wordle with the last names of the top drivers from a circuit from 2009 will be loaded on the left hand side. The circuit may change from time to time on refresh depending on what the API returns first in the array of all the circuits. On the right hand side, a map with points of locations with every circuit will be displayed and the currently selected circuit indicated with a different colored point.
 
 <!--
 [it converts the rawdata into the format of key value pairs where key is the term and values contains the properties of category, total frequency and monthly wise object.]
@@ -39,10 +39,13 @@ The year of the selected race will be centered near the top of the page, and the
 In default, the application visualizes the top drivers with its word cloud and its corresponding location on the map.
 
 When the user selects a different year to be displayed, then its word cloud and respective map is displayed. When the user selects a different circuit to be displayed, then its location on the map will be indicated and the word cloud will be updated.
-<!--When the user hovers on a particular word, {does it do anything on the map?
+<!--When the user hovers on a particular word, {does it do anything on the map?-->
 
-[image of gif basically]
+![Alt text](https://github.com/joshuaj1397/f1-data-visualization/blob/master/F1preview.PNG)
 
+If the user hovers on a partifular word, the name, position (place), and nationality of the driver for the circuit will be displayed. Upon hovering over a point on the map, the location and coordinates of the circuit will be displayed. 
+
+<!--
 ***Interesting Findings***
 
 **Summary of Hamilton**
