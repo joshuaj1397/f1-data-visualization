@@ -67,7 +67,7 @@ function ready(error, world, data) {
         .attr("d", path)
         .call(d3.helper.tooltip(
             function(d){
-                return "<b>"+ d.features.circuitName + "</b><br/>"+ d.circuitID;
+                return "<b>Circuit Location: </b>" + d.features.circuitName + "<br/><b>Circuit Coordinates: </b><br/>" + d.circuitID;
 
             }
 
