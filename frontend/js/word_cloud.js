@@ -9,7 +9,7 @@ const drawWordle = async (results) => {
         text: raceResult.Driver.familyName,
         size: 10 + Math.abs(raceResult.position - race.Results.length) * 2,
           name: raceResult.Driver.familyName,
-          position: raceResult.Position,
+          position: raceResult.position,
           nationality: raceResult.Driver.nationality
       };
   });
@@ -27,14 +27,14 @@ const drawWordle = async (results) => {
 
 // TODO: Use a color pallete that contains meaningful colors
 function getRandColor() {
-    let color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-    //let color = '#9CDCFE';
+    // let color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    let color = '#9CDCFE';
   return color;
 }
 
 function draw(words) {
   d3.select("#wordle").append("svg")
-    .attr("width", 850)
+    .attr("width", 800)
     .attr("height", 350)
     .attr("class", "wordcloud")
     .append("g")
@@ -52,8 +52,7 @@ function draw(words) {
     .text(function(d) { return d.text; })
       .call(d3.helper.tooltip(
           function(d){
-              console.log(d);
-              return "<b>"+ d.name + "</b><br/>"+ d.nationality;
+              return "<b><u>"+ d.name + "</u><br/>Place #</b>" + d.position + "<b><br/> Nationality: </b>"+ d.nationality;
           })
       )
 
