@@ -69,11 +69,11 @@ Haas used to be...
 - Go
 - mongo-tools
 
-## Authors
+## Authors & Contributions 
 
-* **Joshua Johnson**
-* **Adriana Holley**
-* **Justin Rodriguez**
+* **Joshua Johnson**: Backend Setup and Word Cloud 
+* **Adriana Holley**: Word Cloud and Styling 
+* **Justin Rodriguez**: Backend Setup and World Map 
 
 ## License
 
